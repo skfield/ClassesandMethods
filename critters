@@ -1,41 +1,37 @@
-import pygame
-import mycritters
+class Butterfly:
+    def __init__(self):
+        x = random.randrange(50,950)
+        y = random.randrange(50, 400)
+        z = random.randrange(0,4)
+        c = 0
+        self.xcoord = x
+        self.ycoord = y
+        self.colorIndex = c
+        # color for Butterfly : [0 head, 1 antenna, ,2 eyes, 3 body, 4 Wings]
+        self.colorB = [[blue,black,yellow,green,red],[pink,yellow,red,purple,green],[white,blue,red,yellow,purple] ]
 
+def draw_critter(self,screen):
+        x = self.xcoord
+        y = self.ycoord
+        c = self.colorIndex
+        colorButter = self.colorB
+        #left wing
+        pygame.draw.ellipse(screen,colorButter[c][4],[x-80,y-30,100,200])
+        #right wing
+        pygame.draw.ellipse(screen,colorButter[c][4],[x+20,y-30,100,200])
 
- 
-# Define some colors
-white     = ( 255, 255, 255)
-green     = (   0, 255,   0)
-lightblue = (   0, 100, 255)
-brown     = ( 125, 100, 100)
-pink      = ( 100, 0, 0)
- 
+        #body
+        pygame.draw.ellipse(screen,colorButter[c][3],[x,y+40,40,45])
+        pygame.draw.ellipse(screen,colorButter[c][3],[x,y+80,40,45])
+        pygame.draw.ellipse(screen,colorButter[c][3],[x,y+120,40,45])
 
-# Initialize pygame
-pygame.init()
-  
-# Set the height and width of the screen
-size=[1000,1000]
-screen=pygame.display.set_mode(size)
- 
-# Set title of screen
-pygame.display.set_caption("Critters")
+        #head
+        pygame.draw.ellipse(screen,colorButter[c][0], [x, y, 40, 45])
 
-# Function to draw background scene
-def draw_background():
-    pygame.draw.rect(screen,brown,[0, 700, 1000, 300])
-    pygame.draw.rect(screen,green,[0, 600, 1000, 100])
-    pygame.draw.rect(screen,lightblue,[0, 0, 1000, 600])
-    pygame.draw.ellipse(screen,white,[50, 80, 100, 60])
-    pygame.draw.ellipse(screen,white,[120, 60, 180, 80])
-    pygame.draw.ellipse(screen,white,[700, 80, 150, 60])
-    
- 
-# Loop until the user clicks the close button.
-done=False
+        #eyes
+        pygame.draw.ellipse(screen,colorButter[c][2], [x+6, y+10, 10, 15])
+        pygame.draw.ellipse(screen,colorButter[c][2], [x+24, y+10, 10, 15])
 
-# Used to manage how fast the screen updates
-clock=pygame.time.Clock()
-
-critterlist = []
-temp = []
+        #antennas
+        pygame.draw.line(screen,colorButter[c][1], (x+11, y+1), (x+7, y-30), 3)
+        pygame.draw.line(screen,colorButter[c][1], (x+25, y+1), (x+29, y-30),3)
