@@ -2,12 +2,12 @@ import pygame
 import random
 
 class bug:
-    def __init__(self):
-        x = random.randrange(50,950) #generating random numbers in this specific range
+    def __init__(self): #assigning values to data in the class
+        x = random.randrange(50,950)
         y = random.randrange(50, 400)
         z = random.randrange(0,4)
         c = 0
-        self.xcoord = x #setting x-coordinate to x
+        self.xcoord = x 
         self.ycoord = y
         self.colorIndex = c
         colorBug = self.colorB
