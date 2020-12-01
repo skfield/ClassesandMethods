@@ -1,0 +1,33 @@
+import pygame
+import random
+
+class bug:
+    def __init__(self):
+        x = random.randrange(50,950) #generating random numbers in this specific range
+        y = random.randrange(50, 400)
+        z = random.randrange(0,4)
+        c = 0
+        self.xcoord = x #setting x-coordinate to x
+        self.ycoord = y
+        self.colorIndex = c
+        colorBug = self.colorB
+
+    def draw_bug(self,screen):
+        x = self.xcoord
+        y = self.ycoord
+        c = self.colorIndex
+        
+        #left wing drawing
+        pygame.draw.ellipse(screen,colorBug[c][4],[x-80,y-30,100,200])
+        
+        #right wing drawing
+        pygame.draw.ellipse(screen,colorBug[c][4],[x+20,y-30,100,200])
+
+        #body drawing
+        pygame.draw.ellipse(screen,colorBug[c][3],[x,y+40,40,45])
+        pygame.draw.ellipse(screen,colorBug[c][3],[x,y+80,40,45])
+        pygame.draw.ellipse(screen,colorBug[c][3],[x,y+100,40,45])
+
+        #head drawing
+        pygame.draw.ellipse(screen,colorBug[c][0], [x, y, 40, 45])
+
