@@ -1,0 +1,22 @@
+import pygame
+import sys
+pygame.init()
+
+orange=(255,128,128) #found RGB numbers online 
+
+myScreen=pygame.display.set_mode((1020,800)) #size of my screen (I'm on a PC)
+
+pygame.draw.circle(myScreen,orange,(80,80),20,1) #draw a circle
+
+for x in range(0,20)
+    pygame.draw.line(myScreen,orange,(80-x,60-x),(80-x,40-x-1)) #draws lines in 3rd quadrant
+    pygame.draw.line(myScreen,orange,(80+x,100-x),(80+x,120-x-1)) #draws lines in 1st quadrant
+    pygame.draw.line(myScreen,orange,(60-x,80-x),(60-x,60-x-1)) #draws lines in 2nd quadrant
+    pygame.draw.line(myScreen,orange,(100-x,100-x),(100-x,120-x)) #draws lines in 4th quadrant
+
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+    pygame.display.update()
