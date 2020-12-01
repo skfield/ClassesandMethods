@@ -1,0 +1,41 @@
+import pygame
+import mycritters
+
+
+ 
+# Define some colors
+white     = ( 255, 255, 255)
+green     = (   0, 255,   0)
+lightblue = (   0, 100, 255)
+brown     = ( 125, 100, 100)
+pink      = ( 100, 0, 0)
+ 
+
+# Initialize pygame
+pygame.init()
+  
+# Set the height and width of the screen
+size=[1000,1000]
+screen=pygame.display.set_mode(size)
+ 
+# Set title of screen
+pygame.display.set_caption("Critters")
+
+# Function to draw background scene
+def draw_background():
+    pygame.draw.rect(screen,brown,[0, 700, 1000, 300])
+    pygame.draw.rect(screen,green,[0, 600, 1000, 100])
+    pygame.draw.rect(screen,lightblue,[0, 0, 1000, 600])
+    pygame.draw.ellipse(screen,white,[50, 80, 100, 60])
+    pygame.draw.ellipse(screen,white,[120, 60, 180, 80])
+    pygame.draw.ellipse(screen,white,[700, 80, 150, 60])
+    
+ 
+# Loop until the user clicks the close button.
+done=False
+
+# Used to manage how fast the screen updates
+clock=pygame.time.Clock()
+
+critterlist = []
+temp = []
